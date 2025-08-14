@@ -30,7 +30,6 @@ class RateLimiterWorker:
             self.queue.task_done()
 
     async def submit(self, func, *args, **kwargs):
-        """Добавить задачу в очередь и вернуть результат."""
         loop = asyncio.get_event_loop()
         future = loop.create_future()
         await self.queue.put((func, args, kwargs, future))
@@ -67,8 +66,6 @@ async def copy_structure_by_levels(src_root: Path, dst_root: Path, worker: RateL
 
         current_level = next_level
 
-
-# ==== Основной запуск ==== #
 async def main():
     src = Path("A")
     dst = Path("B")
@@ -80,4 +77,5 @@ async def main():
     await copy_structure_by_levels(src, dst, worker)
 
 if __name__ == "__main__":
+
     asyncio.run(main())
