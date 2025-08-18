@@ -1,0 +1,152 @@
+Тесты бота в формате запрос - ответ.
+
+Запрос №1
+
+Hello, world!  
+This is a simple text file.  
+It contains multiple lines.  
+
+12345  
+Testing punctuation: !@#$%^&*()  
+
+Ответ №1
+
+Hello, world! This is a simple text file. It contains multiple lines. 12345 Testing punctuation: !@#$%^&*()
+
+Запрос №2
+
+Привет, мир!  
+こんにちは！  
+Hello, world!  
+
+Mixed языки и symbols: 123!@#  
+
+Ответ №2
+
+Привет, мир! こんにちは！ Hello, world! Mixed языки и symbols: 123!@#
+
+Запрос №3
+
+Line1\nLine2\tTabbed  
+   Extra   spaces   here!  
+
+Unicode: ✓ ☀ 🌍  
+Escapes: \", \', \\  
+
+Ответ №3
+
+Line1\nLine2\tTabbed Extra spaces here! Unicode: ✓ ☀️ 🌍 Escapes: \", \', \\
+
+Запрос №4
+
+Escapes: \" \' \\ \n \t  
+Unicode: 😊 ✓ ☀ 🌍  
+Strange: NULL\x00 \uFFFF  
+
+Ответ №4
+
+Escapes: \" \' \\ \n \t Unicode: 😊 ✓ ☀️ 🌍 Strange: NULL\x00 \uFFFF
+
+Запрос №5
+
+Emails: test@example.com, user+tag@sub.domain.org  
+Dates: 2025-01-01, 31/12/2024  
+IPs: 192.168.1.1, 8.8.8.8  
+
+Ответ №5
+
+Emails: test@example.com, user+tag@sub.domain.org Dates: 2025-01-01, 31/12/2024 IPs: 192.168.1.1, 8.8.8.8
+
+Запрос №6
+
+id,name,age  
+1,Alice,25  
+2,Bob,30  
+3,Charlie,"35"  
+
+Ответ №6
+
+id,name,age 1,Alice,25 2,Bob,30 3,Charlie,"35"
+
+Запрос №7
+
+{
+  "app": "TestApp",
+  "version": 1.0,
+  "settings": {
+    "dark_mode": true,
+    "timeout": 30
+  }
+}
+
+Ответ №7
+
+{ "app": "TestApp", "version": 1.0, "settings": { "dark_mode": true, "timeout": 30 } }
+
+Запрос №8
+
+<root>
+  <user id="1">
+    <name>Alice</name>
+    <age>25</age>
+  </user>
+  <user id="2">
+    <name>Bob</name>
+    <age>30</age>
+  </user>
+</root>
+
+Ответ №8
+
+<root> <user id="1"> <name>Alice</name> <age>25</age> </user> <user id="2"> <name>Bob</name> <age>30</age> </user> </root>
+
+Запрос №9
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Page</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+  <p>This is a <b>test</b> HTML file.</p>
+</body>
+</html>
+
+Ответ №9
+
+<!DOCTYPE html> <html> <head> <title>Test Page</title> </head> <body> <h1>Hello, World!</h1> <p>This is a <b>test</b> HTML file.</p> </body> </html>
+
+Запрос №10
+
+[2025-01-01 12:00:00] INFO: Server started on port 8080  
+[2025-01-01 12:00:05] ERROR: Database connection failed  
+[2025-01-01 12:00:10] WARNING: High CPU usage detected
+
+Ответ №10
+
+[2025-01-01 12:00:00] INFO: Server started on port 8080 [2025-01-01 12:00:05] ERROR: Database connection failed [2025-01-01 12:00:10] WARNING: High CPU usage detected
+
+Запрос №11
+
+$ git status  
+On branch main  
+Your branch is up to date.  
+
+$ ping 8.8.8.8  
+PING 8.8.8.8 (8.8.8.8): 56 data bytes  
+64 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=12.345 ms
+
+Ответ №11
+
+$ git status On branch main Your branch is up to date. $ ping 8.8.8.8 PING 8.8.8.8 (8.8.8.8): 56 data bytes 64 bytes from 8.8.8.8: icmp_seq=0 ttl=117 time=12.345 ms
+
+Запрос №12
+
+{ "broken_json": "missing quote }  
+<xml <unclosed tag>  
+CSV,with,"unclosed"",quote
+
+Ответ №12
+
+{ "broken_json": "missing quote } <xml <unclosed tag> CSV,with,"unclosed"",quote
